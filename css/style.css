@@ -5583,3 +5583,7 @@ background: rgba(255, 255, 255, .4);
   transform: translate(-50%, -50%);
 
 }
+
+.animate:hover {
+  animation: moveInLeft 4s;
+}
