@@ -5588,7 +5588,7 @@ background: rgba(255, 255, 255, .4);
   animation: moveInLeft 4s;
 }
 
-animate2:hover {
-  animation: moveInRight 4s;
+.animate2:hover {
+  animation: moveInRight 5s;
 
 }
