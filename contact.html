@@ -9,6 +9,53 @@
     <meta property="og:type" content="" />
     <meta property="og:url" content="" />
     <meta property="og:image" content="" />
+    <style>
+      @keyframes hidePreloader {
+        0% {
+          width: 100%;
+          height: 100%;
+        }
+
+        100% {
+          width: 0;
+          height: 0;
+        }
+      }
+
+      body > div.preloader {
+        position: fixed;
+        background: white;
+        width: 100%;
+        height: 100%;
+        z-index: 1071;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        overflow: hidden;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      body:not(.loaded) > div.preloader {
+        opacity: 1;
+      }
+
+      body:not(.loaded) {
+        overflow: hidden;
+      }
+
+      body.loaded > div.preloader {
+        animation: hidePreloader 0.5s linear 0.5s forwards;
+      }
+    </style>
+    <script>
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          document.querySelector("body").classList.add("loaded");
+        }, 300);
+      });
+    </script>
     <title>Contact us</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/contact.css" />
@@ -136,17 +183,17 @@
     </header>
 
     <main>
-      <section class="slice py-6 pt-lg-7 pb-lg-8 bg-dark">
+      <section class="slice py-6 pt-lg-7 pb-lg-8 bg-white">
         <!-- Container -->
         <div class="container">
           <div class="row row-grid align-items-center">
             <div class="col-lg-6">
               <!-- Heading -->
-              <h1 class="h1 text-white text-center text-lg-left my-4">
+              <h1 class="h1 text-black text-center text-lg-left my-4">
                 Have a project <strong>in mind?</strong>
               </h1>
               <!-- Text -->
-              <p class="lead text-white text-center text-lg-left opacity-8">
+              <p class="lead text-black text-center text-lg-left opacity-8">
                 Build a beautiful, modern website with flexible Bootstrap
                 components built from scratch.
               </p>
@@ -155,7 +202,7 @@
                 <a
                   href="#sct-form-contact"
                   data-scroll-to
-                  class="btn btn-white btn-lg btn-icon"
+                  class="btn btn-white btn-lg btn-icon bg-orange"
                 >
                   <span class="btn-inner--icon">
                     <i data-feather="edit-2"></i>
