@@ -1292,3 +1292,15 @@ input[type="button"].btn-block {
         width: 100%;
     }
 }
+.link-underline-warning
+{
+    color: #ffbe3d;
+}
+.link-underline-warning:after
+{
+    background-color: #ffbe3d;
+}
+.link-underline-warning:hover
+{
+    color: #ffad0a;
+}
